@@ -379,3 +379,102 @@ h6,
         margin-right: 0;
     }
 }
+
+/* --- MOBILE OPTIMIZATION OVERRIDES --- */
+@media (max-width: 576px) {
+
+    /* 1. Reset Spacing yang Berlebihan */
+    body {
+        padding-top: 80px;
+        /* Kurangi jarak karena navbar mengecil */
+    }
+
+    .section-title {
+        font-size: 2rem;
+        /* Turun dari 3.5rem */
+        margin: 30px 0 20px 0;
+    }
+
+    .custom-card,
+    .rundown-box {
+        padding: 20px !important;
+        /* Timpa p-4/p-5 bootstrap */
+        margin-bottom: 20px;
+    }
+
+    .payment-section {
+        margin-bottom: 50px;
+        /* 150px terlalu jauh */
+    }
+
+    /* 2. Perbaiki Typography Hero Section */
+    /* Menggunakan !important karena Anda memakai inline style di HTML */
+    header.hero h1 {
+        font-size: 2.8rem !important;
+        line-height: 1.2;
+        margin-bottom: 15px;
+    }
+
+    header.hero h4 {
+        font-size: 1rem;
+    }
+
+    header.hero p.lead {
+        font-size: 1rem;
+    }
+
+    /* 3. Navbar Mobile yang Lebih Ringkas */
+    .navbar-custom {
+        padding: 10px 15px;
+        margin: 5px 10px;
+        /* Kurangi margin */
+        border-radius: 15px;
+    }
+
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+
+    /* 4. Perbaikan Timeline/Rundown */
+    /* Garis timeline sering berantakan di mobile, kita rapikan */
+    .timeline-wrapper::before {
+        left: 10px;
+        /* Geser garis ke paling kiri */
+    }
+
+    .timeline-wrapper {
+        padding-left: 25px;
+        /* Beri ruang agar konten tidak menabrak garis */
+    }
+
+    .rundown-item {
+        margin-bottom: 20px;
+    }
+
+    .time-badge {
+        width: auto;
+        /* Jangan paksa 100% */
+        display: inline-block;
+        padding: 5px 15px;
+        font-size: 0.9rem;
+        margin-bottom: 10px;
+        transform: none !important;
+        /* Matikan efek miring hover di HP */
+    }
+
+    .event-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    /* 5. Statistik (Angka-angka) */
+    .col-md-4 .bg-white {
+        padding: 15px !important;
+        margin-bottom: 10px;
+    }
+
+    .col-md-4 h2 {
+        font-size: 2rem;
+    }
+}
